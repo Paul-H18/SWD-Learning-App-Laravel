@@ -1,3 +1,11 @@
-body {
-    background-color: #0a0a0a;
+@use 'variables.scss';
+@use 'login.scss';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Quicksand:wght@300..700&display=swap');
+
+body, html, * {
+    background-color: variables.$bg-color;
+    color: variables.$primary-color;
+    font-family: 'Quicksand', sans-serif;
 }
