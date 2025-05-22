@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class LoginController extends Controller
@@ -15,7 +16,7 @@ class LoginController extends Controller
     }
 
 
-    public function login(Request $request)
+    public function login(Request $request): \Illuminate\Http\RedirectResponse
     {
         $validated = $request->validate([
             'email' => [
@@ -27,10 +28,21 @@ class LoginController extends Controller
             ],
         ]);
 
-
-        if($validated){
-
+        if(Auth::attempt($validated, true)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/');
         }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+
+    }
+
+    public function logout(Request $request): \Illuminate\Http\RedirectResponse
+    {
+        Auth::logout();
+        return redirect()->intended('/');
     }
 
 }

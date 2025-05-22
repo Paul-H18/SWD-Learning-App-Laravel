@@ -1,7 +1,7 @@
 <template>
     <div class="login-form-wrapper">
         <div class="login-form-float">
-            <form method="post" :action="props.formAction">
+            <form method="POST" :action="props.formAction">
                 <table>
                     <tbody>
                         <tr class="login-form-email-row">
@@ -25,6 +25,7 @@
                 <div class="login-submit-wrapper">
                     <input type="submit" value="Login">
                 </div>
+                <input type="hidden" name="_token" :value="props.csrf">
             </form>
         </div>
     </div>
@@ -34,6 +35,9 @@
 
 const props = defineProps({
     formAction: {
+        required: true,
+    },
+    csrf: {
         required: true,
     }
 })

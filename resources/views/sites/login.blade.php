@@ -11,6 +11,6 @@
 
 @section('content')
     <div id="login-app">
-        <app form-action="{{ route('login.action') }}"></app>
+        <app form-action="{{ route('login.action') }}" csrf="{{ csrf_token() }}"></app>
     </div>
 @endsection
