@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="navbar">
-        <Navbar log-out-route="test">
+        <Navbar>
 
         </Navbar>
     </div>
