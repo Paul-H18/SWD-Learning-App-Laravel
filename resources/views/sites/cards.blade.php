@@ -11,6 +11,6 @@
 
 @section('content')
     <div>
-        Hello World
+        Hello World - Cards
     </div>
 @endsection

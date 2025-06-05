@@ -1,0 +1,89 @@
+@use 'variables.scss';
+
+.login-form-wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+
+    form, table, tbody, tr, td, label {
+        background-color: transparent;
+    }
+
+    label {
+        color: #000000;
+    }
+
+    .login-form-float {
+        width: 600px;
+        height: 400px;
+
+        border-radius: 30px;
+        background-color: variables.$primary-color;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-form-email-row {
+        background-color: transparent;
+
+    }
+
+    .login-form-password-row {
+        background-color: transparent;
+
+    }
+
+
+    td {
+        padding-bottom: 25px;
+
+        &.label {
+            padding-right: 75px;
+        }
+    }
+
+    input {
+        background-color: #000000;
+        color: variables.$primary-color;
+        height: 40px;
+        font-size: 24px;
+
+        border: none;
+        border-radius: 15px;
+
+    }
+
+    .login-submit-wrapper {
+        background-color: transparent;
+        padding-top: 50px;
+
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        input {
+            width: 160px;
+            transition-duration: 0.3s;
+            border: none;
+
+            &:hover {
+                transform: scale(110%);
+            }
+
+            &:active {
+                transform: scale(100%);
+            }
+        }
+    }
+
+
+
+}

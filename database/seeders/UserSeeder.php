@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         User::query()->create([
             'firstname' => 'Linas',
             'lastname' => 'Mendoza',
-            'email' => 'test@gmail.com',
+            'email' => 'admin@ort-online.net',
             'password' => Hash::make('admin'),
             'email_verified_at' => now(),
         ]);
